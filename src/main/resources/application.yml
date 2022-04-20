@@ -1,0 +1,10 @@
+server:
+  port: 8036
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/openapidemo
+    username: javadevjournal
+    password: ThePassword
+  jpa:
+    hibernate:
+      ddl-auto: update
