@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-1.0.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1" author="aerrouta" failOnError="true">
+        <comment>Create sequence for comment id.</comment>
+        <sqlFile path="sql/add_column_age.sql" relativeToChangelogFile="true"></sqlFile>
+        <rollback>
+            <sqlFile path="sql/add_column_age_RB.sql" relativeToChangelogFile="true"></sqlFile>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
