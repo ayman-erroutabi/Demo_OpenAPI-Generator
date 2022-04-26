@@ -1,0 +1,50 @@
+openapi: "3.0.0"
+info:
+  title: OpenAPI Demo
+  version: 3.0.0
+paths:
+  /students:
+    get:
+      summary: List all students
+      operationId: listStudents
+      tags:
+        - students
+      responses:
+        '200':
+          description: Successfully List all students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './students.model.yml/#/components/schemas/Student'
+    post:
+      summary: Create a student
+      operationId: createStudents
+      tags:
+        - students
+      responses:
+        '200':
+          description: Successfully Created a student
+          content:
+            application/json:
+              example: '{"message": "Student created successfully!"}'
+  /students/{studentId}:
+    get:
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      summary: Info for a specific student
+      operationId: showStudentsById
+      tags:
+        - students
+      responses:
+        '200':
+          description: Successful Info for a specific student
+          content:
+            application/json:
+              schema:
+                $ref: './students.model.yml/#/components/schemas/Student'
