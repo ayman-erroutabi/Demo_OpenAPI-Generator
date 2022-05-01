@@ -4,15 +4,24 @@ components:
       type: object
       required:
         - id
-        - name
       properties:
         id:
           type: integer
-          format: int64
         name:
           type: string
         tag:
           type: string
+        age:
+          type: integer
+    StudentCreateObject:
+      type: object
+      properties:
+        name:
+          type: string
+        tag:
+          type: string
+        age:
+          type: integer
     Error:
       type: object
       required:
@@ -21,6 +30,5 @@ components:
       properties:
         code:
           type: integer
-          format: int32
         message:
           type: string

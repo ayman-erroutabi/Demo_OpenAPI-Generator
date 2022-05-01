@@ -5,9 +5,9 @@
 
     <changeSet id="1" author="aerrouta" failOnError="true">
         <comment>Create sequence for comment id.</comment>
-        <sqlFile path="sql/add_column_age.sql" relativeToChangelogFile="true"></sqlFile>
+        <sqlFile path="sql/add_column_age.sql" relativeToChangelogFile="true"/>
         <rollback>
-            <sqlFile path="sql/add_column_age_RB.sql" relativeToChangelogFile="true"></sqlFile>
+            <sqlFile path="sql/add_column_age_RB.sql" relativeToChangelogFile="true"/>
         </rollback>
     </changeSet>
 
