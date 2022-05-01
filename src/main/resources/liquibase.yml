@@ -2,5 +2,5 @@ url: jdbc:mysql://localhost:3306/openapidemo
 username: root
 password:
 driver: com.mysql.cj.jdbc.Driver
-outputChangeLogFile: db/changelog/liquibase-outputChangeLog.xml
-#changelog-file: db/db.changelog-master.xml
+outputChangeLogFile: liquibase-outputChangeLog.xml
+changelog-file: db/db.changelog-master.xml
