@@ -1,6 +1,5 @@
 package ma.rightman.openapidemo.services;
 
-import ma.rightman.openapidemo.dto.StudentDTO;
 import ma.rightman.openapidemo.entity.StudentEntity;
 import ma.rightman.openapidemo.model.Student;
 import ma.rightman.openapidemo.model.StudentCreateObject;
@@ -12,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class StudentsServiceImpl implements StudentService {
