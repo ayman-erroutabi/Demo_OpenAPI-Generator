@@ -18,6 +18,16 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-maven-plugin</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.openapitools</groupId>
 			<artifactId>jackson-databind-nullable</artifactId>
 			<version>0.2.1</version>
@@ -26,11 +36,6 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.9.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-maven-plugin</artifactId>
-			<version>3.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,7 +70,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>3.4.1</version>
 				<configuration>
-					<propertyFile>src/main/resources/liquibase.yml</propertyFile>
+					<propertyFile>liquibase.yml</propertyFile>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -86,6 +91,8 @@
 								${project.basedir}/src/main/resources/api/student/students.api.yml
 							</inputSpec>
 							<generatorName>spring</generatorName>
+							<generateApiDocumentation>true</generateApiDocumentation>
+							<generateSupportingFiles>true</generateSupportingFiles>
 							<apiPackage>ma.rightman.openapidemo.api</apiPackage>
 							<modelPackage>ma.rightman.openapidemo.model</modelPackage>
 							<supportingFilesToGenerate>

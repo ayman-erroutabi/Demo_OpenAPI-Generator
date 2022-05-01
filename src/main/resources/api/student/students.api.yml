@@ -23,12 +23,33 @@ paths:
       operationId: createStudents
       tags:
         - students
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: './students.model.yml/#/components/schemas/StudentCreateObject'
       responses:
         '200':
           description: Successfully Created a student
           content:
             application/json:
               example: '{"message": "Student created successfully!"}'
+    put:
+      summary: Modify a student
+      operationId: modifyStudents
+      tags:
+        - students
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: './students.model.yml/#/components/schemas/Student'
+      responses:
+        '200':
+          description: Successfully Modified a student
+          content:
+            application/json:
+              example: '{"message": "Student modified successfully!"}'
   /students/{studentId}:
     get:
       parameters:
@@ -48,3 +69,20 @@ paths:
             application/json:
               schema:
                 $ref: './students.model.yml/#/components/schemas/Student'
+    delete:
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+      summary: Delete specific student
+      operationId: deleteStudentsById
+      tags:
+        - students
+      responses:
+        '200':
+          description: Successfully Deleted a student
+          content:
+            application/json:
+              example: '{"message": "Student deleted successfully!"}'
